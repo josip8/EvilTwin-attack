@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.urlencoded());
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'pleaseSignIn.html'));
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.post('/team_name_url', (req, res) => {
