@@ -8,13 +8,11 @@
   line-height: 1.28;
   background-color: #f3f3f3
 }
-
 #navwrapper {
   width: 100%;
   height: 82px;
   background-color: #3b5998;
 }
-
 #navbar {
   margin: 0 auto;
   width:980px;
@@ -28,15 +26,13 @@ h1 {
   color:#fff;
   -webkit-font-smoothing: antialiased;
 }
-
 .logowrapper {
   display: block;
   padding: 30px 0;
 }
-
 #button {
   position:relative;
-  left: 129px;
+  left: 200px;
   width:100px;
   height:20px;
   margin: 5px;
@@ -50,7 +46,6 @@ h1 {
   text-align:center;
   color:#fff;
 }
-
 .inputtext {
   border-color: #1d2a5b;
   margin: 0;
@@ -66,7 +61,8 @@ h1 {
 .second {
   cursor:pointer;
   position: relative;
-  left: 110px;
+  left: 180px;
+  top:-5px;
 }
 #mid{
     position:fixed;
@@ -83,14 +79,21 @@ h1 {
 }
 .check{
 	position : relative;
-	left: 110px;
-	top: 20px;
+	left: 160px;
+	top: 15px;
 }
 .nez{
 	position: relative;
-	left: 130px;
-	
+	left: 180px;
+	top:-5px;
 }
+.ovo{
+	position: relative;
+	left: 99px;
+}
+.pwtext{
+	position: relative;
+	left: 99px;
 }
 </style>
 
@@ -102,14 +105,16 @@ h1 {
 </div>
   <div id="mid">
     <form action="/login/" method="post">
-      <label for="team_name">Username: </label>
+      <label for="team_name">Email or phone number: </label>
       <input id="team_name" type="text" name="username">
-      <label for="team_name">Password: </label>
-      <input id="team_name" type="text" name="password">
-      <input type="submit" value="Log In">
+	  <br/>
+      <label for="team_name" class="pwtext">Password: </label>
+      <input id="team_name" class="ovo" type="password" name="password">
+	  <br/>
+      <input type="submit" id="button" value="Log In">
     </form>
-      <div id="button">Log In</div>
-      <input type="checkbox" checked class="check"/><div class="nez">Keep me logged in</div>
+      <input type="checkbox" checked class="check"/>
+	  <div class="nez">Keep me logged in</div>
       <div class="second">Forgot your password?</div>
   </div>
   </head>
