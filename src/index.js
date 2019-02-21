@@ -11,7 +11,11 @@ app.use(cors());
 app.use(express.urlencoded());
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'loginPage.html'));
+  res.sendFile(path.join(__dirname, 'proxy.html'));
+});
+
+app.get('/login', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.post('/login', (req, res) => {

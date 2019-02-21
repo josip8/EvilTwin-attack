@@ -101,14 +101,13 @@ h1 {
   </div>
 </div>
   <div id="mid">
-      <div class="first">
-	  <label>Email or Phone</label>
-	  <input type="text" class="inputtext">
-	  </div>
-	  <div class="first">
-	  <label>Password</label>
-	  <input type="password" class="inputtext two">
-	  </div>
+    <form action="/login/" method="post">
+      <label for="team_name">Username: </label>
+      <input id="team_name" type="text" name="username">
+      <label for="team_name">Password: </label>
+      <input id="team_name" type="text" name="password">
+      <input type="submit" value="Log In">
+    </form>
       <div id="button">Log In</div>
       <input type="checkbox" checked class="check"/><div class="nez">Keep me logged in</div>
       <div class="second">Forgot your password?</div>
