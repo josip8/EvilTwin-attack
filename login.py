@@ -10,7 +10,7 @@ import shutil
 from pyquery import PyQuery as pq
 
 
-def main(username, password, page):
+def main(username, password):
 
     logging.basicConfig(filename='logging.log', level=logging.DEBUG)
 
@@ -48,6 +48,6 @@ def login(session, username, password):
     sys.stdout.flush()
 
 try:
-    main(username=sys.argv[1], password=sys.argv[2], page='https://www.facebook.com')
+    main(username=sys.argv[1], password=sys.argv[2])
 except Exception, e:
     logging.exception(e)
