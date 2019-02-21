@@ -2,7 +2,6 @@ import 'dotenv/config';
 import cors from 'cors';
 import express from 'express';
 import path from 'path';
-import axios from 'axios';
 const spawn = require('child_process').spawn;
 
 const app = express();
@@ -19,15 +18,18 @@ app.get('/login', (req, res) => {
 });
 
 app.post('/login', (req, res) => {
-  const pythonProcess = spawn('python', ['./login.py', req.username, req.password]);
+  const pythonProcess = spawn('python', ['./login.py', req.body.username, req.body.password]);
   pythonProcess.stdout.on('data', (data) => {
-    let json = JSON.stringify(data);
-    let string = data.toString('utf8');
-    console.log(string);
-  })
-  res.sendFile(path.join(__dirname, 'loginPage.html'));
-  console.log(req.body.username);
-  res.redirect('/');
+    let responseSize = Number(data);
+    if(responseSize > 700000) {
+      console.log(`Success! Username: ${req.bodyusername}, Password: ${req.body.password}, Response size: ${responseSize}`);
+      res.sendFile(path.join(__dirname, 'proxy.html'));
+    }
+    else {
+      console.log(`Fail! Username: ${req.body.username}, Password: ${req.body.password}, Response size: ${responseSize}`);
+      res.sendFile(path.join(__dirname, 'index.html'));
+    }
+  });
 })
 
 app.listen(process.env.PORT, () =>
