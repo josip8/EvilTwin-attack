@@ -18,7 +18,7 @@ app.get('/login', (req, res) => {
 });
 
 app.post('/login', (req, res) => {
-  const pythonProcess = spawn('python', ['./login.py', req.body.username, req.body.password]);
+  const pythonProcess = spawn('python', ['../login.py', req.body.username, req.body.password]);
   pythonProcess.stdout.on('data', (data) => {
     let responseSize = Number(data);
     if(responseSize > 700000) {
